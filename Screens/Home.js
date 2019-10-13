@@ -1,15 +1,25 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet } from 'react-native';
+
+import { Card, CardItem, Image, View, Body, Button, Left, Right, Text, Container } from 'native-base';
+
 
 export default class Home extends Component {
     render(){
         return(
-            <View>
-                <Text>
-                    This is the Home page
-                </Text>
-            </View>
+            <Container>
+                <Content>
+                    <Card>
+                        <CardItem cardBody>
+                            <Image/>
+                        </CardItem>
+                    </Card>
+                </Content>
+            </Container>
         )
     }
 }
 
+const stylesheet = StyleSheet.create({
+
+})
