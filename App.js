@@ -7,17 +7,16 @@
  */
 
 import React, { Component } from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+
+
+import AppContainer from './Routing/Navigation';
 
 export default class App extends Component{
   render(){
     return(
-      <View>
-        <Text>This is the Main page</Text>
-      </View>
+      <AppContainer/>
     )
   }
 }
 
 
-export default App;
