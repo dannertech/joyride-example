@@ -9,17 +9,33 @@ const profilePicture = require('../Images/profile-pic.png');
 const addButton = require('../Images/add-button.png');
 const cartButton = require('../Images/cart-button.png');
 
-import { joyride, joyridable, JoyrideStep } from 'react-native-joyride';
-const JoyrideText = joyridable(Text);
+import { Coachmark, CoachmarkComposer } from 'react-native-coachmark';
 
 
 
 export default class Home extends Component {
+    constructor(props){
+        super(props);
+        this.coachmark1 = React.createRef();
+        this.coachmark2 = React.createRef();
+        this.coachmark3 = React.createRef();
+        
+    }
+    componentDidMount(){
+        const composer = new CoachmarkComposer([
+            this.coachmark1,
+            this.coachmark2,
+            this.coachmark3
+        ])
+        composer.show();
+    }
     render(){
         return(
             <Container>
                 <View style={{paddingTop: 50, flexWrap: "wrap", flexDirection: "row"}}> 
+                <Coachmark ref={this.coachmark1} message="Click here to save your page!">
                 <Image source={profilePicture}/>
+                </Coachmark>
                 <Text style={{fontSize: 20, fontWeight: "bold", paddingTop: 40}}>Rebecca's Picks</Text>
                 </View>
                 <Content>
@@ -35,9 +51,11 @@ export default class Home extends Component {
                                 <Button transparent>
                                     <Image source={addButton} />
                                 </Button>
+                                <Coachmark ref={this.coachmark2} message="Click here to shop!">
                                 <Button transparent>
                                     <Image source={cartButton}/>
                                 </Button>
+                                </Coachmark>
                             </Left>
                         </CardItem>
                     </Card>
@@ -71,9 +89,11 @@ export default class Home extends Component {
                                 <Button transparent>
                                     <Image source={addButton} />
                                 </Button>
+                                <Coachmark ref={this.coachmark3} message="Click here to add to your favorites!">
                                 <Button transparent>
                                     <Image source={cartButton}/>
                                 </Button>
+                                </Coachmark>
                             </Left>
                         </CardItem>
                     </Card>
@@ -86,3 +106,5 @@ export default class Home extends Component {
 const stylesheet = StyleSheet.create({
 
 })
+
+
