@@ -9,12 +9,19 @@ const profilePicture = require('../Images/profile-pic.png');
 const addButton = require('../Images/add-button.png');
 const cartButton = require('../Images/cart-button.png');
 
+import { joyride, joyridable, JoyrideStep } from 'react-native-joyride';
+const JoyrideText = joyridable(Text);
+
 
 
 export default class Home extends Component {
     render(){
         return(
             <Container>
+                <View style={{paddingTop: 50, flexWrap: "wrap", flexDirection: "row"}}> 
+                <Image source={profilePicture}/>
+                <Text style={{fontSize: 20, fontWeight: "bold", paddingTop: 40}}>Rebecca's Picks</Text>
+                </View>
                 <Content>
                     <Card>
                         <CardItem cardBody>
